@@ -26,6 +26,7 @@ public class CalculateHelper {
     setCommandFromString(commandString);
    //Switch statement will take care of calling adder, subtracter, multiplier, or divider depending on what command was typed.
    //we look at that command and create the appropriate calculateBase derived class
+   
    CalculateBase calulator = null;
    switch (command) {
     case Add:
