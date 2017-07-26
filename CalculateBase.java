@@ -4,6 +4,7 @@ package com.pluralsight.calengine;
   */
 //we need to declare as abstract since method calculate is going to be intiated in other subclasses.
 //abstract method calculate() will not work without calling the entire class abstract
+//will extend this class to Adder, Subtracter, Multiplier, and Divider class.
 public abstract class CalculateBase {
     private double leftVal;
     private double rightVal;
