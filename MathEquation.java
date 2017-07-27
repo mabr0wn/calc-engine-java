@@ -26,7 +26,7 @@ public class MathEquation {
   }
   
   public double getResult() { return result; }
-   //we do not need to use a set Result, will sue execute() method instead. 
+  //we do not need to use a set Result, will use execute() method instead. 
   
   //Constructors
   public MathEquation() { }
@@ -39,7 +39,7 @@ public class MathEquation {
     this.leftVal = leftVal;
     this.rightVal = rightVal;
   }
-  //Methods
+  //Method for execute our double variables on main class.
   public void execute(double leftVal, double rightVal) {
     this.leftVal = leftVal;
     this.rightVal = rightVal;
@@ -48,7 +48,7 @@ public class MathEquation {
     
     
   }
-  
+  //method execute to call our int variables on Main.java
   public void execute(int leftVal, int rightVal) {
     this.leftVal = leftVal;
     this.rightVal = rigthVal;
@@ -56,16 +56,30 @@ public class MathEquation {
     execute();
     
     result = (int)result
-  } 
+  }//Switch statement  
   public void execute() {
       switch(opCode) {
         case 'a':
-            result = leftVal + rightVal
-      
+            result = leftVal + rightVal;
+            break;
+       case 's':
+            result = leftVal - rightVal;
+            break;
+       case 'd':
+            result = rightVal != 0.0d ? leftVal / rightVal : 0.0d;
+            //another way to write switch method.
+            /*if(rightVal != 0.0d);
+                 result leftVal / rightVal
+              else
+                 result = 0.0d; */ 
+            break;
+       case 'm' :
+            result = leftVal * rightVal;
+            break;
+       default:
+            System.out.println("Error - Invalid opCode");
+            result = 0.0d;
+            break;
       } 
-        
-  
-  
-  }
-  
+   }
 }
