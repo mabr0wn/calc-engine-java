@@ -9,6 +9,9 @@ public class Main {
     //UseCalculatorBase();
     
     String[] statements = {
+            "add 1.0",
+            "add xx 25.0",
+            "addX 0.0 0.0",
             "divide 100.0 50.0", //100.0 / 50.0 = 2.0
             "add 25.0 92.0", //25.0 + 92.0 = 117.0
             "substract 225.0 17.0" //225.0 - 17.0 = 208.0
@@ -20,8 +23,12 @@ public class Main {
     //tell helper to process them running the process method in CalculateHelp
     //ask the helper to write it out.
     for (String statement:statements) {
+      try {
          helper.process(statement);
          System.out.println(helper);
+      } catch(InvalidStatementException e) {
+          System.out.println("Original exception: " + e.cause().getMessage());
+      }
     }
     /*MathEquation testEquation = new MathEquation();
     testEquation.execute();
