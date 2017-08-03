@@ -14,16 +14,29 @@ public class CalculateHelper {
     double result;
   
   
-  public void process(String statement) {
+  public void process(String statement) throws InvalidStatementException {
     //want to receive a string ass 1.0 2.0
     //we recieve the complete string.
     //we then break into individual parts
     String[] parts = statement.split(" "); //this will give you a space
+   if (parts.length != 3)
+    //run this throwable because statement in Main does not have three fields
+     throw new InvalidStatementException("Incorrect number of fields", statement);
     String commandString = parts[0];//expect to find the value like add
+   try {
+    //run this throwable because does not have two numeric fields, in this case it failed it only has one.
+    //when the try runs the catch picks up that it is not a valid field
     leftValue = Double.parseDouble(part[1]);//convert string ot a double 1.0 as a double
     rightValue = Double.parseDouble(part[2]);//same as above
+   } catch (NumberFormatException e){
+     throw new Invalid StatementException("Non Numeric data", statement, e);
+   }
     //We then translate the string command into our math command enumeration
+   //the throwable runs the constructor and throws exception because the "Add" string was invalid
     setCommandFromString(commandString);
+   if(command == null)
+    throw new InvalidStatementException("Invalid statement", statement);
+   
    //Switch statement will take care of calling adder, subtracter, multiplier, or divider depending on what command was typed.
    //we look at that command and create the appropriate calculateBase derived class
    
