@@ -35,6 +35,28 @@ public class DynamicHelper {
     break;
     //when we break out of this for statement we now have a handler that can handle that particular keyword
    }
-   
-  }
+ }
+ //convert a string into a double
+ //taking parts[1] would be the first number in the string 1.0
+ double leftVal = Double.parseDouble(parts[1]);
+ //parts[2] would be the 2nd number in the string 2.0
+ double rightVal = Double.parseDouble(parts[2]);
+ 
+ //the results will be calculate leftVal and rightVal base on that keyword  that the handler is processing
+ //add, subtract, multiply, division
+ double result = theHanlder.doCalculation(leftVal, rightVal);
+ 
+ //use the string builder to output how we want the print out to look like.
+ StringBuilder sb = new StringBuilder(20);
+ //append inserts at the end of the line of code.
+ sb.append(leftVal);
+ sb.append(' ');
+ sb.append(theHandler.getSymbol);
+ sb.append(' ');
+ sb.append(rightVal);
+ sb.append(" = ");
+ sb.append(result);
+ 
+ return sb.toString();
+ 
 }  
