@@ -4,7 +4,7 @@ package com.pluralsight.calengine;
   *Added to github on 08/7/17 by MBROWN
   */
 public class DynamicHelper {
-  private MathProcesing[] handlers;
+  private MathProcessing[] handlers;
   
   //pass in that array of all the handlers we want to use.
   //in side the parameters we will pass in MathProcessing array
@@ -26,6 +26,15 @@ public class DynamicHelper {
  
   //next add a for loop will go through the handlers
   for (MathProcessing handler : handlers) {
-   //we want to take the current handler we are looping through and call it getKeyword
+   //we want to take the current handler we are looping through and call it getKeyword method
+   //runs the keyword(add) in this statement matches the keyword that handler is currently handling.
+   if (keyword.equalsIgnoreCase(handler.getKeyword())) {
+     //if it is matches the keyword we will take the local variable and assign it to theHandler
+    theHandler = handler;
+    //then we will break out of the loop
+    break;
+    //when we break out of this for statement we now have a handler that can handle that particular keyword
+   }
+   
   }
 }  
