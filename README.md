@@ -1,4 +1,4 @@
-# CalEngine
+# CalcEngine
 Calculator Engine
 
 
